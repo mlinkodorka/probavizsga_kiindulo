@@ -18,13 +18,7 @@
                         {{ __('Szakdolgozatok') }}
                     </x-nav-link>
 
-                    @if (Auth::id()==1)
-                    <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
-                        {{ __('Admin') }}
-                    </x-nav-link>
-
-
-                    @endif
+                  
 
                 </div>
             </div>
