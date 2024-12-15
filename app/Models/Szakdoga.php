@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Szakdoga extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'szakdoga_nev',
+        'tagokneve',
+        'githublink',
+        'oldallink'
+    ];
 }
