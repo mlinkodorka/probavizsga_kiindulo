@@ -14,18 +14,34 @@ class SzakdogaController extends Controller
 
     public function store(Request $request)
     {
-        return Szakdoga::create($request->all());
+        $validated = $request->validate([
+            'szakdoga_nev' => 'required|string',
+            'githublink' => 'required',
+            'oldallink' => 'required',
+            'tagokneve' => 'required|string',
+        ]);
+        return Szakdoga::create($validated);
     }
+
 
     public function update(Request $request, $id)
     {
-        $szakdoga=Szakdoga::find($id);
-        $szakdoga->update($request->all);
+        $validated = $request->validate([
+            'szakdoga_nev' => 'required|string',
+            'githublink' => 'required',
+            'oldallink' => 'required',
+            'tagokneve' => 'required|string',
+        ]);
+
+        $szakdoga = Szakdoga::findOrFail($id);
+        $szakdoga->update($validated);
         return $szakdoga;
     }
 
+    // DELETE - szakdoga törlése
     public function destroy($id)
     {
         Szakdoga::find($id)->delete();
+
     }
 }

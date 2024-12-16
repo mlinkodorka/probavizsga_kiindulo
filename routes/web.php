@@ -28,3 +28,9 @@ Route::get('/dashboard', function () {
 require __DIR__ . '/auth.php';
 
 require __DIR__ . '/auth.php';
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/szakdogak', function () {
+        return view('dashboard');
+    });
+});

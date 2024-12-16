@@ -1,3 +1,17 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+footer {
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #343a40;
+    padding: 1rem 0;
+    text-align: center;
+}
